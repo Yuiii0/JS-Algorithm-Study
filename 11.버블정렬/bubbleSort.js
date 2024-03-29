@@ -1,5 +1,3 @@
-import { swap } from "./swap";
-
 function bubbleSort(arr) {
   let noSwaps; //거의 정렬된 경우 효율성을 위해 flag추가
   for (let i = arr.length; i > 0; i--) {
