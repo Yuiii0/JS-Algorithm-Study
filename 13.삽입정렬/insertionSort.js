@@ -14,4 +14,4 @@ function insertSort(arr) {
   return arr;
 }
 
-console.log(insertSort([2, 1, 9, 76, 4]));
+// console.log(insertSort([2, 1, 9, 76, 4]));
