@@ -1,4 +1,4 @@
-function merge(arr1, arr2) {
+export function merge(arr1, arr2) {
   arr1 = arr1.sort((a, b) => a - b);
   arr2 = arr2.sort((a, b) => a - b);
   //arr1 포인터
