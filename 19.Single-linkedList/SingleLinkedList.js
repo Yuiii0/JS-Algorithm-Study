@@ -12,7 +12,7 @@ class SingleLinkedList {
   }
 
   push(val) {
-    let newNode = new Node(val); //node 생성
+    const newNode = new Node(val); //node 생성
     if (!this.head) {
       //맨처음 삽입의 경우 (head,tail=새로운 노드)
       this.head = newNode;
@@ -93,9 +93,11 @@ class SingleLinkedList {
     let current = this.head;
 
     while (counter !== index) {
+      //counter < index
       current = current.next;
       counter++;
     }
+    //counter==index가 되는순간 find!
     return current;
   }
   //기존에 존재하면, val만 바꾼다
