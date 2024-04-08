@@ -53,7 +53,7 @@ class BinarySearchTree {
       // }
 
       if (current.value === value) {
-        //find!!햣
+        //find!!
         return true;
       }
 
