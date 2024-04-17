@@ -33,9 +33,10 @@ class priorityQueue {
   }
   sinkDown() {
     let idx = 0; //초기값 root
-    const length = this.values.length;
+    const length = this.values.length; //인덱스 범위초과 확인하기위해
     const element = this.values[0];
 
+    //위(root)에서부터 내려가기
     while (true) {
       let leftChildIdx = 2 * idx + 1;
       let rightChildIdx = 2 * idx + 2;
