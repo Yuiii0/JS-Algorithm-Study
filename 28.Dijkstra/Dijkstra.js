@@ -64,27 +64,32 @@ class WeightedGraph {
 
         while (previous[smallest]) {
           //null(start)를 만나기전까지 무한반복
-          path.push(smallest); //E-F-D-C-A
+          path.push(smallest); //E-F-D-C
           smallest = previous[smallest]; //F-D-C-A-null(업데이트해줌)
         }
-        console.log(path);
+        console.log(path); //[E-F-D-C]
       }
       if (smallest || distances[smallest] !== Infinity) {
         for (let neighbor in this.adjacencyList[smallest]) {
+          //console.log("smallest", smallest);
+          // console.log("네이버", this.adjacencyList[smallest]);
+          //console.log("네이버i", neighbor); //객체가 아닌 왜 숫자로 나오는지?
+
           //neighboring node 찾기
           let nextNode = this.adjacencyList[neighbor];
-          console.log(nextNode);
-          //calculate
-          let candidate = distances[smallest] + nextNode.weight;
-          let nextNeighor = nextNode.node;
+          // console.log(nextNode);
 
-          if (candidate < distances[nextNeighor]) {
-            //업데이트 smallest
-            distances[nextNeighor] = candidate;
+          //calculate distances 새로운 인접 노드
+          let candidate = distances[smallest] + nextNode.weight; //인접노드값 거리
+          let nextNeighbor = nextNode.node;
+
+          if (candidate < distances[nextNeighbor]) {
+            //업데이트 distance
+            distances[nextNeighbor] = candidate;
             //업데이트 previous
-            previous[nextNeighor] = smallest;
-            //enqueue
-            nodes.enqueue(nextNeighor, candidate);
+            previous[nextNeighbor] = smallest;
+            //enqueue with new priority
+            nodes.enqueue(nextNeighbor, candidate);
           }
         }
       }
